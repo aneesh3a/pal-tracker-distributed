@@ -13,8 +13,13 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Gradle Permission
+        run: chmod +x ./gradlew
+      - name: create db file permission
+        run: chmod +x ./databases/create-databases.sql
       - name: Create test database
         run: |
+          sudo /etc/init.d/mysql start
           mysql -uroot -proot < databases/create_databases.sql
           ./gradlew testMigrate
       - name: Build with Gradle
