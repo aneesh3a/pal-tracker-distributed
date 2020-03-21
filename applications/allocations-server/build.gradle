@@ -2,5 +2,6 @@ apply from: "$projectDir/../server.gradle"
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    compile "io.github.resilience4j:resilience4j-spring-boot2:1.2.0"
     compile project(":components:allocations")
 }
