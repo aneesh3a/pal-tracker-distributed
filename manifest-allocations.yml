@@ -12,3 +12,4 @@ applications:
   - tracker-allocations-database
   - tracker-service-registry
   - sso-test
+  - tracker-config-server
